@@ -8,19 +8,19 @@ let config = {
 }
 
 mercadopago.configurations.setAccessToken(config.access_token);
-mercadopago.configurations.sandbox = true;
+// mercadopago.configurations.sandbox = true;
 
 var payment_data = {
-  transaction_amount: 1,
-  description: 'Mensalidade de site',
-  payment_method_id: 'pec',
+  transaction_amount: 10,
+  description: 'Xxxxx',
+  payment_method_id: 'bolbradesco',
   payer: {
     email: 'test@test.com',
     first_name: 'Test',
     last_name: 'User',
     identification: {
         type: 'CPF',
-        number: '19119119100'
+        number: '51667721054'
     },
     address:  {
         zip_code: '06233200',
@@ -35,7 +35,9 @@ var payment_data = {
 
 mercadopago.payment.create(payment_data).then(function (data) {
 
-  console.log(JSON.stringify(data));
+  // console.log(JSON.stringify(data));
+  console.log("ID > ", data.body.id);
+  console.log("HTTP > ", data.body.transaction_details.external_resource_url);
 
 }).catch(function (error) {
 
