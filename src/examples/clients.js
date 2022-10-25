@@ -21,6 +21,5 @@ mercadopago.customers.create(customer_data).then(function (customer) {
   mercadopago.card.create(card_data).then(function (card) {
     console.log(card);
   });
-
 });
 
